@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<ead>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism3.css">
+    <script src="prism.js"></script>
+
+<body>
+    <div>
+
+        <h2> 1. Fundamentos de PHP</h2>
+        <h3>Instalación de PHP: Aprende cómo instalar y configurar PHP en tu máquina.</h3>
+        Usa XAMPP, MAMP o instala PHP directamente. <br>
+        <h3> Sintaxis básica de PHP:</h3>
+        Variables y tipos de datos (string, int, float, boolean). <br>
+        <p>las Variables en php se definen usando el signo <b>$</b> seguido del nombre de la variable</p>
+
+        <pre><code class="language-php">
+            &lt;?php
+            $nombre = "hedel"
+            ?&gt;
+        </code></pre> <br>
+
+        <p>Php es un lenguaje de tipado debil, lo que significa que no se necesita declarar el tipo de variable, php lo
+            asigna </p>
+
+        <div class="code-container">
+            <pre><code class="language-php">
+            &lt;?php
+            $nombre = "Juan";  // String
+            $edad = 30;        // Entero
+            $precio = 9.99;    // Decimal
+            $esValido = true;  // Booleano
+            echo "Mi nombre es $nombre y tengo $edad años.";
+            ?&gt;
+        </code></pre>
+        </div>
+        <a href="Fundamentos/variables y tipos de datos.php">Codigo php</a> <br>
+
+
+        <div class="subtitle">Operadores (aritméticos, comparación, lógicos)</div> <br>
+        <p>PHP soporta muchos tipos de operadores como son: <br>
+        <h4>Aritmeticos</h4>
+        - suma = + <br>
+        - resta = -<br>
+        - multiplcacion = * <br>
+        - division = / <br>
+        - modulo = % <br>
+        <div class="code-container">
+            <pre><code class="language-php">
+            &lt;?php
+            $x = 10;
+            $y = 20;
+
+            echo $x + $y;  // Resultado: 30
+            ?&gt;
+        </code></pre>
+        </div>
+        <h4>Comparación</h4>
+
+        - Igualdad = (==) <br>
+        - Identico = (===) <br>
+        - Diferente = (!=) <br>
+        - maryor que <br>
+        - menort que <br>
+        <h4>Logicos</h4>
+        - AND = && <br>
+        - OR = || <br>
+        - NOT = !</p>
+
+        <div class="subtitle"> Estructuras de control: <b>if, else, elseif, switch.</div> </b> <br>
+        <p>Php ofrece estrucutras de control para condicionales y bucles, las estrucutras de control permiten modificar
+            el flujo de ejecucion de las intrucciones </p>
+
+        <h4>If</h4>
+        <p>utilizamos los condicionaes para evaluar si una condicion se cumple o no, esto tambien ayuda al flujo de
+            nuestro propio codigo</p>
+
+        <div class="code-container">
+            <pre><code class="language-php">
+            &lt;?php
+            $edad = 18;
+
+                if ($edad >= 18) {
+                    echo "tu edad es $edad  ya estas viejillo <br>";
+                } else {
+                    echo "tu edad es $edad hueles a carcel <br>";
+                }
+            ?&gt;
+        </code></pre>
+        </div>
+
+        <p>Usamos if queremos una conficional anidad <br> -La traduccion literal de if es "SI" <br> else es: "DE LO
+            CONTRARIO" <br> por lo tanto <b>ELSEIF</b> seria por lo contrario POR LOCONTRARIO SI</p>
+
+        <div class="code-container">
+            <pre><code class="language-php">
+            &lt;?php
+            // asigna calidicaciones A,B,C,D,F segun la calificacion obtenidad
+
+            $calificacion = 70;
+            if ($calificacion >= 90) {
+                echo "A <br>";
+            } elseif ($calificacion >= 80) {
+                echo "B <br>";
+            } elseif ($calificacion >= 70) {
+                echo "C  <br>";
+            } elseif ($calificacion >= 60) {
+                echo "D <br>";
+            } else {
+                echo "F <br>";
+            }
+            ?&gt;
+        </code></pre>
+        </div>
+
+        <H4>Switch</H4>
+        <p>Otra forma de trabajar con el flujo del cofigo es utlizando los Switch, la traduccion literl seria
+            <b>CAMBIOS</b> <br> EJEMPLO
+        </p>
+
+        <div class="code-container">
+            <pre><code class="language-php">
+            &lt;?php
+            $dia = "jueves";
+
+            switch ($dia) {
+                case 'lunes':
+                    echo " $dia es el dia 1 <br>";
+                    break;
+                case 'martes':
+                    echo "$dia es el dia 2 <br>";
+                    break;
+                case 'miercoles':
+                    echo " $dia es el dia 3 <br>";
+                    break;
+                case 'jueves':
+                    echo " $dia es el dia 4 <br>";
+                    break;
+                case 'viernes':
+                    echo "$dia es el dia 5<br>";
+                    break;
+                case 'sabado':
+                    echo " $dia es el dia 6 <br>";
+                    break;
+                case 'domingo':
+                    echo " $dia es el dia 7 <br>";
+                    break;
+            
+                default:
+                    echo " ese dia no existe <br>";
+                    break;
+            }
+            ?&gt;
+        </code></pre>
+        </div>
+        <div class="subtitle">CUANDO USAR CADA UNO <br></div>
+        <p>
+            if: se utiliza cuando se hacen comparaciones mas complejas que no se limitan ala simple igualdad <br>
+            switch: se utiliza cuando se tiene una sola variable que puede tomar mas valores</p>
+        <a href="Fundamentos/estrucuras de control.php"><br>Estrucutras de control PHP <br></a>
+
+        <div class="subtitle">Bucles: <b>for, while, foreach.</b></div>
+        <h4><b>For</b></h4> <br>
+        <p>For se usa generalmente cuando quieres contar e iterar soobre una secuencia de numeros o para recorres arrays
+            con indices, es mas adecuado cuando sabes cuandotas veces quieres que se ejecute el bucle.
+            <br> en resumen es mas adecuado cuando quieres controlar el numero de iteraciones
+        </p>
+        <h3>EJEMPLO 1</h3>
+        <p>Estrucuras basica de un ciclo for imprime los nuemos del 1 al 10</p>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                // Imprime los números del 1 al 10
+                for ($i = 1; $i <= 10; $i++) {
+                    echo $i . "<br>";
+                }
+                ?&gt;
+            </code></pre>
+        </div>
+
+        <h3>EJEMPLO 2</h3>
+        <P>Encuentra los numeros primos del 1 al 50</P>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                function esprimo($numero){ // creamos las funcion esprimo y que requiere del la variable numero
+                    if($numero &lt;= 1) return false; // verificamos que sea numeros naturales mayores a 1
+                    // si el resultado es menor a 1, automaqticamente retorna falso
+                    for ($i=2; $i &lt;= sqrt($numero); $i++) { // itera desde 2 hasta la raiz cruadada del numero buscado
+                        // esto es por que lo divisores siempre estaran entre 2 y la raiz cuadrada del numero
+                        if ($numero % $i ==0) return false;  // si alguno de los numeros es divisible quiere decir que tiene mas divisores aparte de si mismo, por lo tanto automaticamente nos regresa false.
+                    }
+                    return true;// si no se sumple lo anteriro llega a este punto en el cual nos retorna verdadero
+                }
+                 //NOTA return sn php y la mayoria de lenjuages termina automaticamente la funcion
+                
+                for ($i=1; $i &lt;=50 ; $i++) { // lo primero que hacemos es recorrer el for del numero 1 al 50
+                    
+                    if(esprimo($i)){ // verificamos SI la funcion esprimo arroja un resultado verdadero
+                        echo $i . "<br>"; // si da un resultado verdadero mostramos el numero
+                    }
+                }
+                ?&gt;
+            </code></pre>
+        </div>
+        <h3>For each</h3> <br>
+        <p>For ecah esta diseñado para rrecorrer arrays o colecciones de datos de manera directa, es ideral para iterrar
+            sobre arrays tanto indexados como aosciativos </p>
+        <p>Muestra lo elementos de una lista de arrays colores = array(rojo,verde,azul) <br></p>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                $colores = array("rojo","verde","azul");
+                foreach ($colores as $color) {
+                    echo "Color: $color <br>";
+                }
+                ?&gt;
+            </code></pre>
+        </div>
+        <p>muestra un conjunto de elementos en un array con indices</p>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                $numeros = array(10, 20, 30, 40, 50);
+
+                foreach ($numeros as $indice => $valor) {
+                    echo "El valor en el índice $indice es $valor <br>";
+                }
+                
+                ?&gt;
+            </code></pre>
+        </div>
+
+        <h3>While y do While</h3>
+        <p>While y do While viene siendo el mismo bucle con la diferencia de que do while se ejecutara minimo una vez
+        </p>
+        <b> EJEMPLO while</b>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                $numero = 0;
+
+                while ($numero > 0) {
+                    echo "Número: $numero<br>";
+                    $numero--;
+                }
+                ?&gt;
+            </code></pre>
+        </div>
+
+        <b>EJEMPLO DO While</b>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                $numero = 0;
+
+                do {
+                    echo "Número: $numero<br>";
+                    $numero--;
+                } while ($numero > 0);
+                
+                ?&gt;
+            </code></pre>
+        </div>
+        <div class="subtitle">Cuando usar for y while</div>
+        <p><b>FOR</b>: es util cuando sabes cuantas veces se debe iterar sobre un rango numerico <br>
+            ejemplo: (contar numeros, recorrer arrays idexados, iteraciones fijas.)</p>
+
+        <p><b>WHILE</b> Se usas cuando no sabes cuantas veces se debe ejecutar el bucle y depende de un condicion
+            externa <br>
+            Ejemplo: Esperaar un evento, repertir hasta que una condicion se cumpla</p>
+        <a href="Fundamentos/bucles.php">Bucles</a>
+
+        <div class="subtitle">Break y Continue</div>
+        <p>break: Sale del bucle y no se ejecutan mas iteraciones despues del break <br>
+
+        <div class="code-container">
+            <pre><code class="language-php">
+                    &lt;?php
+                    // rompe el ciclo cuando llega ala iteracion numero 5
+                    for ($i = 1; $i  &lt; 10; $i++) {
+                        if ($i == 5) {
+                            echo $i . "<br>";
+                            break;
+                        }
+                        echo $i . "<br>";
+                    }
+                    ?&gt;
+                </code></pre>
+        </div>
+
+        continue: Salta a la siguiente iteración del bucle y las iteraciones restantes aun se ejecutan <br></p>
+
+        <div class="code-container">
+            <pre><code class="language-php">
+                    &lt;?php
+                    //continua si i es igual a 5 salta la iteracion y continua el ciclo
+                    for ($i = 1; $i <= 10; $i++) {
+                        if ($i == 5) {
+                
+                            continue;
+                        }
+                        echo $i . "<br>";
+                    }
+                    ?&gt;
+                </code></pre>
+        </div>
+
+        <a href="Fundamentos/break y continue.php">Break y Continue</a>
+
+        <h3>Funciones básicas :</h3>
+        <div class="subtitle"> Definir y usar funciones.</div> <br>
+        <p>una funcion se define con <strong class="resaltar">FUNCTION [NOMBRE DE LAS FUNCION] ( )</strong></p>
+        <p>sintaxis basica de las funciones</p>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                //sintaxis basica de una funcion 
+                function nombreDelaFuncion (){
+                    // codigo que ejecuta la funcion 
+                    echo "la funcion mostrar este texto cuando se llame ";
+                } 
+            
+                nombreDelaFuncion();
+                ?&gt;
+            </code></pre>
+        </div>
+        <h3><strong class="resaltar">valores por defecto en parametros</strong></h3>
+        <p>podemos asignar valores por defecto en los parametros, si no se pasa un valor tomara el valor por defecto
+        </p>
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                // podemos asignar valores por defecto en los parametros, si no se pasa un valor tomara el valor por defecto 
+
+                function Saludos($nombre = "Generico por defecto <br>"){
+                    echo "hola $nombre ";
+                }
+            
+                Saludos("Hedel <br>"); // el resultado ser Hola Hedel
+                Saludos(); // el resultado sera hola Generico por defecto
+                ?&gt;
+            </code></pre>
+        </div>
+        <h3><strong class="resaltar">Retorno de variables</strong></h3>
+        <p>las funciones pueden devolver un valor utilizandfo la palabra clave return, el valor retornado se puede
+            almacenar para usarse despues</p>
+
+        <div class="code-container">
+            <pre><code class="language-php">
+                &lt;?php
+                // las funciones pueden devolver un valor utilizando la palabra clave return
+                function multiplicar($a, $b){
+                    return $a * $b;
+                }
+            
+                $resultado = multiplicar(3,5); // el resultado sera 15
+                echo $resultado;
+                ?&gt;
+            </code></pre>
+        </div>
+
+        <h3><strong class="resaltar">Alcance de las variables (Scope) </strong></h3>
+        <p>El alcanze de una variable de termina donde puede ser usada <br>
+            las variables que se declaran dentro de la funcion son locales y solo pueden usarse dentro de las funcion
+            <br>las variables que se declaran fuera de la funcion son Globales, se pueden mandar a llamar desde
+            cualquier parte <br>
+            si quitarmos la palabra <strong class="resaltar"> goblal</strong> nuestra variable X ya no seria
+            accesible</p> 
+
+            <div class="code-container">
+                <pre><code class="language-php">
+                    &lt;?php
+                    $x=10;// variable global
+
+                    function mostrarX(){
+                        global $x; //hace que la variable sea accesible en la funcion ;
+                        echo $x;
+                    }
+                
+                    mostrarX(); // resultado 10
+                    ?&gt;
+                </code></pre>
+            </div>
+
+        <a href="Fundamentos/funciones.php">Funciones</a><br>
+        Funciones integradas de PHP (ej: <b> print, isset, empty, var_dump</b> ). <br>
+
+        <h2> 2. Estructuras de datos</h2>
+        <h3>Arrays:</h3>
+        Arrays indexados. <br>
+        Arrays asociativos. <br>
+        Manipulación de arrays con funciones como <b> array_pop, count, implode, explode. </b> <br>
+
+        <h3>Manejo de cadenas:</h3>
+        Funciones para trabajar con strings: <b>strlen, substr, str_replace, strpos, etc</b>. <br>
+
+        <h3>Manejo de fechas y tiempos:</h3>
+        Uso de <b>date()</b>, <b>time()</b>, y la función <b>strtotime.</b> <br>
+
+        <h2>3. Programación orientada a objetos (OOP)</h2>
+        <h3>Clases y objetos:</h3>
+        Cómo definir una clase y crear objetos. <br>
+        <h3>Propiedades y métodos:</h3>
+        Propiedades estáticas, métodos, y el constructor. <br>
+        <h3>Herencia:</h3>
+        Clases padre e hijo, <b>extends</b>.
+        <h3>Encapsulamiento:</h3>
+        Modificadores de acceso: <b>public, private, protected.</b> <br>
+        <h3>Polimorfismo y Abstracción:</h3>
+        Uso de interfaces y clases abstractas. <br>
+
+        <h2> 4. Manejo de formularios y validación</h2>
+        <h3>Formulario HTML con PHP:</h3>
+        Método POST y GET. <br>
+        Validación de formularios en PHP. <br>
+
+        <h3>Subida de archivos:</h3>
+        Cómo manejar la subida de archivos y control de errores. <br>
+
+        <h2> 5. Manejo de bases de dato s</h2>
+        <h3>Conexión a bases de datos:</h3>
+        Uso de MySQLi o PDO para conectarse a una base de datos MySQL. <br>
+        <h3>Operaciones CRUD:</h3>
+        Crear, Leer, Actualizar y Eliminar registros desde PHP. <br>
+        <h3>Consultas SQL avanzadas:</h3>
+        Filtrado, ordenamiento y limitación de resultados. <br>
+        <h3>Prepared Statements:</h3>
+        Protección contra inyecciones SQL usando prepared statements. <br>
+        <h2>6. Sesiones y cookies</h2>
+        <h3>Manejo de sesiones:</h3>
+        Cómo crear y manejar sesiones en PHP. <br>
+        <h3>Manejo de cookies:</h3>
+        Crear y recuperar cookies. <br>
+        <h2>7. Seguridad en PHP</h2>
+        <h3>Validación y filtrado de datos:</h3>
+        Uso de funciones como <b>filter_var</b>. <br>
+        <h3>Protección contra ataques comunes:</h3>
+        Evitar inyecciones SQL. <br>
+        XSS (Cross-site Scripting). <br>
+        CSRF (Cross-Site Request Forgery). <br>
+        <h2>8. Trabajo con APIs y JSON</h2>
+        <h3>Consumo de APIs:</h3>
+        Cómo hacer peticiones HTTP con <b>file_get_contents</b> o <b>cURL</b>. <br>
+        <h3>Manejo de JSON:</h3>
+        Convertir arrays a JSON y viceversa usando <b>json_encode</b> y <b>json_decode</b>.
+        <h2>9. Frameworks en PHP</h2>
+        <h3>Introducción a frameworks:</h3>
+        Laravel, Symfony, CodeIgniter (elige uno para profundizar). <br>
+        <h3> Estructura de un proyecto en Laravel.</h3>
+        <h3>Conceptos avanzados:</h3>
+        Rutas, controladores, vistas, middleware, modelos.
+    </div>
+
+
+
+
+</body>
+
+</html>

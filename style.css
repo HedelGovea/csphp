@@ -1,0 +1,17 @@
+:root {
+    color-scheme: dark;
+}
+
+body{
+    font-size: 25px;
+}
+
+.subtitle{
+    color: aqua;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.resaltar{
+    color: red;
+}
